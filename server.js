@@ -97,5 +97,8 @@ app.get('/api/health',(req,res)=>res.json({
   app:'Profit Magnet',
   openaiConfigured:!!process.env.OPENAI_API_KEY,
   marketDataConfigured:!!process.env.TWELVEDATA_API_KEY
-}));
-app.listen(process.env.PORT||3000,()=>console.log('Profit Magnet backend on port '+(process.env.PORT||3000)));
+}));const PORT = process.env.PORT || 10000;
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Profit Magnet running on port ${PORT}`);
+});
